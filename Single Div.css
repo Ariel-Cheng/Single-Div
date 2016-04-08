@@ -1,51 +1,132 @@
 .entry {
+    position: relative;
     text-align: center;
     min-height: 400px;
-    position: relative;
+    width: 100%;
 }
+
 .entry div {
     position: absolute;
-    left: 50%;
     top: 50%;
+    left: 50%;
 }
+
 .entry div:before,
 .entry div:after {
-    display: block;
     content: '';
+    display: block;
     position: absolute;
 }
 
 #cupcake {
-    background: #ffc0cb;
+    background-color: #ffc0cb;
 }
+
 #cupcake div {
     width: 240px;
     height: 150px;
+    background-color: #61381c;
+    border-bottom-left-radius: 120px 30px; /*水平半径，垂直半径*/
+    border-bottom-right-radius: 120px 30px;
     margin-left: -120px;
     margin-top: -30px;
-    background: #61381c;
-    background-image: radial-gradient(circle at top center, rgba(73,41,20,0) 55%, rgba(73,41,20,0.9) 75%), repeating-linear-gradient(to right, transparent, transparent 7px, rgba(0,0,0,0.7) 9px, rgba(0,0,0,0.7) 20px, transparent 22px), linear-gradient(to bottom, transparent 15px, rgba(255,255,255,0.5) 16px, rgba(255,255,255,0.3) 40px, transparent 42px);
-    border-bottom-right-radius: 120px 30px;
-    border-bottom-left-radius: 120px 30px;
-    box-shadow: 0 10px 5px -3px rgba(0,0,0,0.3);
+    background-image: radial-gradient(
+            circle at top center,
+            rgba(73, 41, 20, 0) 55%, /*透明*/ rgba(73, 41, 20, 0.9) 75%
+    ),
+    repeating-linear-gradient(
+            to right,
+            transparent,
+            transparent 7px,
+            rgba(0, 0, 0, 0.7) 9px,
+            rgba(0, 0, 0, 0.7) 20px,
+            transparent 22px /*22px重复一次*/
+    ), linear-gradient(
+            transparent,
+            transparent 15px,
+            rgba(255, 255, 255, 0.5) 16px,
+            rgba(255, 255, 255, 0.3) 40px,
+            transparent 42px /*产生一个柔和的过渡*/
+    );
+    -webkit-box-shadow: 0 10px 5px -3px rgba(0, 0, 0, 0.3);
+
 }
+
 #cupcake div:before {
+    top: -70px;
+    left: 50%; /*绝对定位*/
+    margin-left: -120px;
     width: 240px;
     height: 80px;
-    margin-left: -120px;
-    left: 50%;
-    top: -70px;
     background: #ffe4e1;
     border-radius: 60% 60% 50px 50px;
-    box-shadow: 0 20px 0 6px #3d241c, inset 0 -15px 25px rgba(145,102,146,0.5);
+    box-shadow: 0 20px 0 6px #3d241c, inset 0 -15px 25px rgba(145, 102, 146, 0.5);
 }
+
 #cupcake div:after {
-    width: 60px;
-    height: 60px;
-    margin-left: -30px;
     top: -95px;
     left: 50%;
+    margin-left: -30px;
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
     background: #dc143c;
-    border-radius: 50%;
     box-shadow: inset 0 -10px 10px rgba(0,0,0,0.2);
+}
+
+#key {
+    background: #f7f7f7;
+}
+
+#key div {
+    width: 80px;
+    height: 100px;
+    border: 15px solid #fdf1cd;
+    border-radius: 50%;
+    margin-top: -70px;
+    margin-left: -180px;
+    box-shadow: -3px -3px 0 3px #fefffa,
+    -4px -4px 1px 3px #c68628,
+    -6px -5px 0 4px #feedac,
+    3px 2px 0 3px #fdf1cd,
+    7px 5px 3px 3px #2e1f07,
+    10px 7px 0 3px #c68628,
+    inset 4px 3px 3px #2e1f07,
+    inset 7px 5px 0 #c68628,
+    inset 9px 7px 2px rgba(0, 0, 0, 0.4),
+    inset 12px 10px 3px rgba(0, 0, 0, 0.2),
+    inset -2px -2px 0 #fefffa,
+    12px 8px 3px 3px rgba(0, 0, 0, 0.4),
+    15px 12px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#key div:before {
+    width: 250px;
+    height: 30px;
+    top: 35px;
+    left: 85px;
+    background-image: linear-gradient(#f8d675 3%, #f8d675 7%, #2e1f07 11%, #2e1f07 16%,
+    #fefffa 23%, #fefffa 50%, #2e1f07 57%, #2e1f07 70%, #feedac 84%, #feedac 97%, #c68628 99%);
+    border-radius: 15px 8px 8px 15px;
+    border-left: 1px solid #fefffa;
+    border-right: 1px solid #f8d675;
+    box-shadow: -1px 0 0 #c68628, 1px 0 0 #2e1f07, 2px 0 0 #c68628,
+    5px 4px 2px -1px rgba(0, 0, 0, 0.4), 11px 9px 4px rgba(0, 0, 0, 0.2);
+}
+
+#key div:after {
+    width: 40px;
+    height: 40px;
+    top: 30px;
+    left: 112px;
+    background-image: linear-gradient(to bottom, #f8d675 3%, #f8d675 7%, #2e1f07 11%, #2e1f07 16%,
+    #fefffa 23%, #fefffa 45%, #2e1f07 52%, #2e1f07 65%, #feedac 80%, #feedac 97%, #c68628 99%);
+    box-shadow: -1px 0 1px #fefffa, 1px 0 0 #f8d675, 2px 0 0 #c68628, 3px 3px 2px rgba(0, 0, 0, 0.2),
+    170px 37px 0 4px #f8e6b3, 169px 37px 0 4px #fefffa, 170px 34px 0 4px #2e1f07,
+    171px 39px 2px 4px #2e1f07, 172px 40px 0 5px #d69941, 174px 43px 3px 4px rgba(0, 0, 0, 0.4),
+    178px 45px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+#else {
+    background: #afeeee;
 }
